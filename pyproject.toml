@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "fast-api-first-project"
+version = "0.1.0"
+description = ""
+authors = ["sangwonlee06 <sangwonlee0622@outlook.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.115.0"
+uvicorn = "^0.30.6"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.8.0"
+isort = "^5.13.2"
+mypy = "^1.11.2"
+pytest = "^8.3.3"
+coverage = "^7.6.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black] # Formatting
+line-length = 120
+
+[tool.isort]
+profile = "black" # 블랙과 호환
+
+[tool.mypy] # 정적 타입 검사
+python_version = 3.12
+strict = true
+
+[tool.coverage.run] # test coverage
+source = ["app"]
+
+[tool.coverage.report] # total coverage has to be over 60, otherwise fails
+fail_under = 60
