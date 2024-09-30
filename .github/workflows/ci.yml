@@ -18,6 +18,9 @@ jobs:
     steps:
       - name: Check out the codes
         uses: actions/checkout@v4
+
+      - name: Setup python environment
+        uses: actions/setup-python@v2
         with:
           python-version: 3.12
 
