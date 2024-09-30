@@ -4,16 +4,17 @@ version = "0.1.0"
 description = ""
 authors = ["sangwonlee06 <sangwonlee0622@outlook.com>"]
 readme = "README.md"
+package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.12"
 fastapi = "^0.115.0"
 uvicorn = "^0.30.6"
 tortoise-orm = {extras = ["asyncmy"], version = "^0.21.6"}
-aerich = "^0.7.2"
 cryptography = "^43.0.1"
-pydantic = "^2.9.2"
 pydantic-settings = "^2.5.2"
+pydantic = "^2.9.2"
+aerich = "^0.7.2"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -23,6 +24,11 @@ mypy = "^1.11.2"
 pytest = "^8.3.3"
 coverage = "^7.6.1"
 
+
+[tool.aerich]
+tortoise_orm = "app.configs.database_settings.TORTOISE_ORM"
+location = "./migrations"
+src_folder = "./."
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
