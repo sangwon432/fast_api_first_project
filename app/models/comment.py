@@ -1,14 +1,15 @@
 from __future__ import annotations
 
-from tortoise import fields
-from tortoise import Model
+from tortoise import Model, fields
 
 from app.models.article import Article
 from app.models.base_model import BaseModel
 
 
 class Comment(BaseModel, Model):
-    article: fields.ForeignKeyRelation[Article] = fields.ForeignKeyField("models.Article", related_name="comments", db_constraint=False)
+    article: fields.ForeignKeyRelation[Article] = fields.ForeignKeyField(
+        "models.Article", related_name="comments", db_constraint=False
+    )
     author = fields.CharField(max_length=255)
     body = fields.TextField()
 

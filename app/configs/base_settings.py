@@ -8,6 +8,7 @@ class Env(StrEnum):
     STAGE = "stage"
     PROD = "prod"
 
+
 class Settings(BaseSettings):
     ENV: Env = Env.LOCAL
     DB_HOST: str = "127.0.0.1"
