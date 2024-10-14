@@ -18,6 +18,8 @@ if [ $LOCAL = $REMOTE ]; then
 elif [ $LOCAL = $BASE ]; then
     echo "$LOCAL"
     echo "Need to pull"
+    git pull
+    kill -HUP 3380
 else
     echo "Diverged"
 fi
