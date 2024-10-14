@@ -1,6 +1,7 @@
 from fastapi import APIRouter
 
 # test: http localhost:8001/health
+# review this later
 
 router = APIRouter(prefix = "/health", tags=["Health"])
 
