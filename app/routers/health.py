@@ -8,5 +8,5 @@ router = APIRouter(prefix = "/health", tags=["Health"])
 @router.get("")
 async def health() -> dict[str, str]:
     return {
-        "ok": "okay"
+        "ok": "okay2"
     }
