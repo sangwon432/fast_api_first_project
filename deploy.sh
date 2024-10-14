@@ -17,5 +17,7 @@ if [ $LOCAL = $REMOTE ]; then
     echo "Up-to-date"
 elif [ $LOCAL = $BASE ]; then
     echo "$LOCAL"
-deploy.sh
-oby-akhs-sye
+    echo "Need to pull"
+else
+    echo "Diverged"
+fi
